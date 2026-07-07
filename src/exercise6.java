@@ -1,32 +1,40 @@
+
 import java.util.Scanner;
-
-public class exercise6 {
+public class Exercise6 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in) ;
+        Scanner sc = new Scanner(System.in);
 
-                System.out.print("eded daxil edin: ");
-        String strEded = sc.nextLine();
+        System.out.print("Birinci ədəd: ");
+        double birinci = sc.nextDouble();
 
+        System.out.print("İkinci ədəd: ");
+        double ikinci = sc.nextDouble();
 
-        // String → int
-        int eded = Integer.parseInt(strEded);
+        System.out.print("Əməliyyat (+,-,*,/): ");
+        String emeliyyat = sc.next();
 
-        System.out.println("Int formatı: " + eded);
-
-        // riyazi əməliyyat
-        int yeniEded = eded + 10;
-        System.out.println("10 əlavə olunmuş hal: " + yeniEded);
-
-        // int → String
-        String yeniString = String.valueOf(yeniEded);
-
-        System.out.println("String formatı: " + yeniString);
-
-        // length tapmaq
-        int uzunluq = yeniString.length();
-
-        System.out.println("Uzunluq: " + uzunluq);
+        switch (emeliyyat) {
+            case "+":
+                System.out.println("Nəticə: " + (birinci + ikinci));
+                break;
+            case "-":
+                System.out.println("Nəticə: " + (birinci - ikinci));
+                break;
+            case "*":
+                System.out.println("Nəticə: " + (birinci * ikinci));
+                break;
+            case "/":
+                if (ikinci == 0) {
+                    System.out.println("0-a bölmək olmaz!");
+                } else {
+                    System.out.println("Nəticə: " + (birinci / ikinci));
+                }
+                break;
+            default:
+                System.out.println("Naməlum əməliyyat!");
+        }
 
         sc.close();
     }
 }
+

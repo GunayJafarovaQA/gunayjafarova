@@ -1,41 +1,39 @@
+// Bank menyusunda seçilən əməliyyatı göstərir.
 import java.util.Scanner;
 
-public class exercise10 {
+public class Exercise10 {
+    public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
 
-public static void main(String[] args) {
+        System.out.println("1 - Balans yoxla");
+        System.out.println("2 - Pul yatır");
+        System.out.println("3 - Pul çıxar");
+        System.out.println("4 - Çıxış");
 
+        System.out.print("Seçiminizi daxil edin: ");
+        int secim = scanner.nextInt();
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Ad Soyad daxil edin:");
-        String fullName = sc.nextLine();
+        switch (secim) {
 
-        System.out.print("Yas daxil edin");
-        int age = sc.nextInt();
+            case 1:
+                System.out.println("Balansınız: 5000 AZN");
+                break;
 
-        sc.nextLine();
+            case 2:
+                System.out.println("Pul yatırma əməliyyatı seçildi.");
+                break;
 
-        System.out.println("Illik gelir daxil edin :");
-        String incomeText = sc.nextLine();
+            case 3:
+                System.out.println("Pul çıxarma əməliyyatı seçildi.");
+                break;
 
-        double income = Double.parseDouble(incomeText);
+            case 4:
+                System.out.println("Sistemdən çıxılır");
+                break;
 
-        boolean nameCheck = fullName.contains(" ") && fullName.length()>5;
-        boolean ageCheck = age >= 18  && age<=70;
-        boolean incomeCheck = income >= 3000;
-
-        boolean accepted = nameCheck && ageCheck && incomeCheck ;
-           System.out.printf("\n===== HESABAT =====\n") ;
-          System.out.printf("Ad Soyad : %s\n",fullName.toUpperCase()) ;
-          System.out.printf("Yas : %d\n",age) ;
-          System.out.printf("Gelir : %.2f AZN\n", income) ;
-
-             System.out.println  ("\nSertler:");
-          System.out.println ("Ad Soyad uygundur:"+nameCheck);
-            System.out.println ("Yas uygundur:"+ageCheck);
-            System.out.println ("Gelir uygundur:"+ incomeCheck);
-
-                        System.out.println ("\nQerar:" + accepted);
-
+            default:
+                System.out.println("Yanlış seçim");
+        }
     }
-            }
+}

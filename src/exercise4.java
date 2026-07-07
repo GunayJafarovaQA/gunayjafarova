@@ -1,32 +1,18 @@
+// Daxil edilən ilin uyğun (leap year) olub-olmadığını yoxlayır.
 
 import java.util.Scanner;
 
-public class exercise4 {
+public class Exercise4 {
+public static void main (String[] args){
+    Scanner sc = new Scanner(System.in);
 
-        public static void main(String[] args) {
+    System.out.print("İli daxil edin: ");
+    int il = sc.nextInt();
 
-            Scanner sc = new Scanner(System.in);
+    boolean sert = (il % 400 == 0) || (il % 4 == 0 && il % 100 != 0);
 
-            System.out.print("a daxil et: ");
-            int a = sc.nextInt();
+    System.out.println(sert ? "Uyğun il" : "Uyğun deyil");
 
-            System.out.print("b daxil et: ");
-            int b = sc.nextInt();
-
-            System.out.println("Baslangic: a = " + a + ", b = " + b);
-
-            a = a + b;
-            System.out.println("Addim 1 (a = a + b): a = " + a + ", b = " + b);
-
-            b = a - b;
-            System.out.println("Addim 2 (b = a - b): a = " + a + ", b = " + b);
-
-            a = a - b;
-            System.out.println("Addim 3 (a = a - b): a = " + a + ", b = " + b);
-
-            System.out.println("Nəticə: a = " + a + ", b = " + b);
-
-            sc.close();
-        }
-    }
-
+    sc.close();
+}
+}

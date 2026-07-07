@@ -1,31 +1,45 @@
+// Üç tam ədəd içərisində ən böyük və ən kiçik olanı tapır.
+
+
 import java.util.Scanner;
 
-public class exercise2 {
+public class Exercise2 {
+public static void main (String[]args) {
+    Scanner sc = new Scanner(System.in);
 
+    System.out.println("a: ");
+    int a = sc.nextInt();
 
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
+    System.out.println("b: ");
+    int b = sc.nextInt();
 
-            System.out.print("Kredit məbləğini daxil edin: ");
-            double mebleg = sc.nextDouble();
+    System.out.println("c: ");
+    int c = sc.nextInt();
 
-            System.out.print("İllik faiz dərəcəsini daxil edin (%): ");
-            double faiz = sc.nextDouble();
+    int enBoyuk ;
+    int enKicik ;
 
-            System.out.print("Müddəti daxil edin (ay): ");
-            int muddet = sc.nextInt();
-
-            double umumiFaiz = mebleg * (faiz / 100);
-            double umumiOdenis = mebleg + umumiFaiz;
-            double ayliqOdenis = umumiOdenis / muddet;
-
-            System.out.println("\n Kreditin mebelgi ");
-            System.out.println("Ümumi faiz: " + umumiFaiz);
-            System.out.println("Ümumi ödəniş: " + umumiOdenis);
-            System.out.println("Aylıq ödəniş: " + ayliqOdenis);
-
-            sc.close();
-        }
+    if (a>=b && a>=c)
+    {enBoyuk = a ;
     }
+    else if (b>=a && b>=c)
+    { enBoyuk = c ;
+    }
+    else {enBoyuk = c ;}
+
+    if (a <= b && a <= c) {
+        enKicik = a;
+    } else if (b <= a && b <= c) {
+        enKicik = b;
+    } else {
+        enKicik = c;
+    }
+
+    System.out.println("Ən böyük: " + enBoyuk);
+    System.out.println("Ən kiçik: " + enKicik);
+
+    sc.close();
+}
+}
 
 

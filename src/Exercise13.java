@@ -1,28 +1,29 @@
-// İmtahan balına uyğun qiymət müəyyən edir.
-
+// BMI hesablayaraq kateqoriyanı göstərir.
 import java.util.Scanner;
 
 public class Exercise13 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Bal daxil edin: ");
-        int bal = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
 
-        if (bal < 0 || bal > 100) {
-            System.out.println("Yanlış bal!");
-        } else if (bal >= 90) {
-            System.out.println("Əla (5)");
-        } else if (bal >= 80) {
-            System.out.println("Çox yaxşı (4)");
-        } else if (bal >= 70) {
-            System.out.println("Yaxşı (3)");
-        } else if (bal >= 60) {
-            System.out.println("Kafi (2)");
+        System.out.print("Çəki (kq): ");
+        double ceki = scanner.nextDouble();
+
+        System.out.print("Boy (metr): ");
+        double boy = scanner.nextDouble();
+
+        double bmi = ceki / (boy * boy);
+
+        System.out.println("BMI = " + bmi);
+
+        if (bmi < 18.5) {
+            System.out.println("Arıq");
+        } else if (bmi < 25) {
+            System.out.println("Normal");
+        } else if (bmi < 30) {
+            System.out.println("Artıq çəkili");
         } else {
-            System.out.println("Qeyri-kafi (1)");
+            System.out.println("Piylənmə");
         }
-
-        sc.close();
     }
 }
