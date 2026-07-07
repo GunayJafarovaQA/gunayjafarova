@@ -1,45 +1,24 @@
-// Üç tam ədəd içərisində ən böyük və ən kiçik olanı tapır.
-
-
+// Yaşa görə bilet qiymətini hesablayır.
 import java.util.Scanner;
 
 public class Exercise12 {
-public static void main (String[]args) {
-    Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
 
-    System.out.println("a: ");
-    int a = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
 
-    System.out.println("b: ");
-    int b = sc.nextInt();
+        System.out.print("Yaşı daxil edin: ");
+        int yas = scanner.nextInt();
 
-    System.out.println("c: ");
-    int c = sc.nextInt();
-
-    int enBoyuk ;
-    int enKicik ;
-
-    if (a>=b && a>=c)
-    {enBoyuk = a ;
+        if (yas < 0) {
+            System.out.println("Yanlış yaş");
+        } else if (yas <= 5) {
+            System.out.println("Pulsuz");
+        } else if (yas <= 17) {
+            System.out.println("5 AZN");
+        } else if (yas <= 64) {
+            System.out.println("10 AZN");
+        } else {
+            System.out.println("3 AZN");
+        }
     }
-    else if (b>=a && b>=c)
-    { enBoyuk = c ;
-    }
-    else {enBoyuk = c ;}
-
-    if (a <= b && a <= c) {
-        enKicik = a;
-    } else if (b <= a && b <= c) {
-        enKicik = b;
-    } else {
-        enKicik = c;
-    }
-
-    System.out.println("Ən böyük: " + enBoyuk);
-    System.out.println("Ən kiçik: " + enKicik);
-
-    sc.close();
 }
-}
-
-

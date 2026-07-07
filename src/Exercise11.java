@@ -1,25 +1,31 @@
-// Verilən tam ədədin cüt/tək və müsbət/mənfi/sıfır olduğunu müəyyən edir.
+// Hərfin sait və ya samit olduğunu müəyyən edir.
 import java.util.Scanner;
 
 public class Exercise11 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ədəd daxil edin");
-        int eded = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
 
-        if (eded % 2 == 0) {
-            System.out.println("cutdur");
-        } else {
-            System.out.println("tekdir");
+        System.out.print("Bir hərf daxil edin: ");
+        char herf = scanner.next().charAt(0);
+
+        switch (herf) {
+
+            case 'a':
+            case 'A':
+            case 'e':
+            case 'E':
+            case 'i':
+            case 'I':
+            case 'o':
+            case 'O':
+            case 'u':
+            case 'U':
+                System.out.println("Sait");
+                break;
+
+            default:
+                System.out.println("Samit");
         }
-        if (eded > 0) {
-            System.out.println("musbetdir");
-        } else if (eded < 0) {
-            System.out.println("menfidir");
-        } else {
-            System.out.println("Sıfırdır");
-        }
-        sc.close();
     }
 }
