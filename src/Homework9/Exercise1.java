@@ -1,22 +1,14 @@
+
 package Homework9;
 
 public class Exercise1 {
 
-    private int batareya;
+    public static void main(String[] args) {
 
-    public void setBatareya(int batareya) {
+        Telefon telefon = new Telefon();
 
-        if (batareya >= 0 && batareya <= 100) {
-            this.batareya = batareya;
-        } else {
-            System.out.println("Xəta! Batareya 0-100 arası olmalıdır.");
-        }
+        telefon.setBatareya(80);
 
+        System.out.println("Son batareya: " + telefon.getBatareya());
     }
-
-    public int getBatareya() {
-        return batareya;
-    }
-
 }
-
